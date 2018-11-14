@@ -327,7 +327,7 @@ def WarGameLoserFirst(jokers):
 def WarGameRandom(jokers):
     try:
         #Variable clearing/definition
-        global hand1Saved, hand2Saved, warSum
+        global hand1Saved, hand2Saved, warSum, order
         deck = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,14,14]
         hand1 = []
         hand2 = []
@@ -495,6 +495,7 @@ def WarGameRandom(jokers):
         print("Player Hand:", hand1Saved)
         print("Computer Hand:", hand2Saved)
         print("Number of Wars:", warSum)
+        print("Game order:", order) 
 
         
 #--------------------------------------------------------------------------------
