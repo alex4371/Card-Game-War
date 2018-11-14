@@ -1,5 +1,5 @@
 #War project - This file has the three basic types of games and thier possible jocker values in one
-#Alex Pavlik
+#By: alex4371
 #This program was written to collect data on the length of games of war and their connection to the frequency of wars appearing
 #Created: August 2, 2018
 #Running on :Python 3.6.3
