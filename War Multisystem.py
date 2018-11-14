@@ -636,7 +636,9 @@ while True:
 --------------------------------------------------------------------------------
 This is still a changing project and will be editited often.
 
-This data is designed to be entered into a database with '[' being the delimiting character.
+The data from this program will be first saved to a text file.
+
+This data is designed to be then entered into a database with '[' being the delimiting character.
 
 If any game is saved with a 0 rounds, that means it went to 10,000 rounds and was forced to stop.
 
