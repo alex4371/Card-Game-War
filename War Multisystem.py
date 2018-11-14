@@ -2,6 +2,7 @@
 #Alex Pavlik
 #This program was written to collect data on the length of games of war and their connection to the frequency of wars appearing
 #Created: August 2, 2018
+#Running on :Python 3.6.3
 import random
 
 
@@ -12,6 +13,7 @@ import random
 #--------------------------------------------------------------------------------
 def WarGameWinnerFirst(jokers):
     try:
+        #Variable clearing/definition
         global hand1Saved, hand2Saved, warSum
         deck = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,14,14]
         hand1 = []
@@ -167,6 +169,7 @@ def WarGameWinnerFirst(jokers):
 #--------------------------------------------------------------------------------
 def WarGameLoserFirst(jokers):
     try:
+        #Variable clearing/definition
         global hand1Saved, hand2Saved, warSum
         deck = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,14,14]
         hand1 = []
@@ -305,6 +308,7 @@ def WarGameLoserFirst(jokers):
             playerWins = True
         elif len(hand2) != 0:
             playerWins = False
+            
         return hand1Saved, hand2Saved, roundNum, playerWins, hand1Sum, hand2Sum, warSum
     
     except:
@@ -322,6 +326,7 @@ def WarGameLoserFirst(jokers):
 #--------------------------------------------------------------------------------
 def WarGameRandom(jokers):
     try:
+        #Variable clearing/definition
         global hand1Saved, hand2Saved, warSum
         deck = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,14,14]
         hand1 = []
@@ -480,7 +485,8 @@ def WarGameRandom(jokers):
             playerWins = True
         elif len(hand2) != 0:
             playerWins = False
-            
+       
+        #Converting the order string into hexidecimal so it will save memory space.
         orderSaved = str(hex(int(order, 2)))
         return hand1Saved, hand2Saved, roundNum, playerWins, orderSaved, hand1Sum, hand2Sum, warSum
     
@@ -518,6 +524,7 @@ while True:
         if mode is 'W':
             for i in range(count):
                 hand1Save, hand2Save, rounds, whoWins, hand1Sum, hand2Sum, warSum = WarGameWinnerFirst(jokersNum)
+                #Reformatting arrays to work with the delimiter
                 s = str(hand1Save)
                 s1 = s.replace("]","")
                 s = str(hand2Save)
@@ -548,6 +555,7 @@ while True:
         elif mode is 'L':
             for i in range(count):
                 hand1Save, hand2Save, rounds, whoWins, hand1Sum, hand2Sum, warSum = WarGameWinnerFirst(jokersNum)
+                #Reformatting arrays to work with the delimiter
                 s = str(hand1Save)
                 s1 = s.replace("]","")
                 s = str(hand2Save)
@@ -578,6 +586,7 @@ while True:
         elif mode is 'R':
             for i in range(count):
                 hand1Save, hand2Save, rounds, whoWins, hand1Sum, hand2Sum, warSum = WarGameWinnerFirst(jokersNum)
+                #Reformatting arrays to work with the delimiter
                 s = str(hand1Save)
                 s1 = s.replace("]","")
                 s = str(hand2Save)
@@ -625,17 +634,19 @@ while True:
 -------------------------------Program Notes------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-This is still a changing project and will be editited often
+This is still a changing project and will be editited often.
 
-This data is designed to be entered into a database with '[' being the delimiting character
+The data from this program will be first saved to a text file.
 
-If any game is saved with a 0 rounds, that means it went to 10,000 rounds and was forced to stop
+This data is designed to be then entered into a database with '[' being the delimiting character.
 
-There are catches in to keep any errors from causing a fatal crash of the program
+If any game is saved with a 0 rounds, that means it went to 10,000 rounds and was forced to stop.
 
+There are catches in to keep any errors from causing a fatal crash of the program.
 
+The program generally takes 10 minutes to run 1,000,000 games.
 
-
+There is some optimization that can be done by combining the three functions into one, but for debuggin they were left seperate.
 
 
 
