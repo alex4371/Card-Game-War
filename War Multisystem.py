@@ -555,7 +555,7 @@ while True:
 
         elif mode is 'L':
             for i in range(count):
-                hand1Save, hand2Save, rounds, whoWins, hand1Sum, hand2Sum, warSum = WarGameWinnerFirst(jokersNum)
+                hand1Save, hand2Save, rounds, whoWins, hand1Sum, hand2Sum, warSum = WarGameLoserFirst(jokersNum)
                 #Reformatting arrays to work with the delimiter
                 s = str(hand1Save)
                 s1 = s.replace("]","")
@@ -586,7 +586,7 @@ while True:
 
         elif mode is 'R':
             for i in range(count):
-                hand1Save, hand2Save, rounds, whoWins, hand1Sum, hand2Sum, warSum = WarGameWinnerFirst(jokersNum)
+                hand1Save, hand2Save, rounds, whoWins, orderSaved, hand1Sum, hand2Sum, warSum = WarGameRandom(jokersNum)
                 #Reformatting arrays to work with the delimiter
                 s = str(hand1Save)
                 s1 = s.replace("]","")
@@ -648,8 +648,5 @@ There are catches in to keep any errors from causing a fatal crash of the progra
 The program generally takes 10 minutes to run 1,000,000 games.
 
 There is some optimization that can be done by combining the three functions into one, but for debuggin they were left seperate.
-
-
-
 
 '''
